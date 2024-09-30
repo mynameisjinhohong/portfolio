@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MouseOnCharacterSelect_HJH : MonoBehaviourPun
 {
-    // ´©°¡ ¹Ù²Ù°í ÀÖ´Â°¡¸¦ ¾Ë·ÁÁÖ´Â º¯¼ö
+    // ëˆ„ê°€ ë°”ê¾¸ê³  ìˆëŠ”ê°€ë¥¼ ì•Œë ¤ì£¼ëŠ” ë³€ìˆ˜
     public int whoConnectThis;
 
     bool select = false;
@@ -103,7 +103,7 @@ public class MouseOnCharacterSelect_HJH : MonoBehaviourPun
         }
     }
 
-    // ¾Ë¾Æ¼­ »ı¼ºµÇ°Ô -> UI¾È¿¡ µé¾î°¡°Ô
+    // ì•Œì•„ì„œ ìƒì„±ë˜ê²Œ -> UIì•ˆì— ë“¤ì–´ê°€ê²Œ
     [PunRPC]
     void ChangeImage(int what,int who)
     {

@@ -15,8 +15,7 @@ public class PlayerDwarf_HJH : PlayerMove_HJH //IPunObservable
     // Update is called once per frame
     void Update()
     {
-        //[Çö¼÷]
-        //¸¸¾à¿¡ ³»°ÍÀÌ¶ó¸é ¿òÁ÷ÀÓ
+        //ë§Œì•½ì— ë‚´ê²ƒì´ë¼ë©´ ì›€ì§ì„
         if (photonView.IsMine)
         {
             if (Player == true)
@@ -139,7 +138,7 @@ public class PlayerDwarf_HJH : PlayerMove_HJH //IPunObservable
     }
     public void SkillEffect()
     {
-        //[Çö¼÷]
+        //[í˜„ìˆ™]
         if (photonView.IsMine)
         {
             photonView.RPC("RpcShowSkillEffect", RpcTarget.All);  

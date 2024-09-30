@@ -51,8 +51,8 @@ public class GameLobbyManager_HJH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //¸¸¾à RoomMax ÇÃ·¹ÀÌ¾î°¡ ´Ù µé¾î¿À¸é
-        //È÷¾î·Î ¼±ÅÃÀÌ °¡´ÉÇÏ°Ô ÇÑ´Ù
+        //ë§Œì•½ RoomMax í”Œë ˆì´ì–´ê°€ ë‹¤ ë“¤ì–´ì˜¤ë©´
+        //íˆì–´ë¡œ ì„ íƒì´ ê°€ëŠ¥í•˜ê²Œ í•œë‹¤
         if(playerPhoton.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
             GameObject playerChoice = GameObject.Find("PlayerChoice(Clone)");
@@ -71,11 +71,11 @@ public class GameLobbyManager_HJH : MonoBehaviour
         }
     }
 
-    //°ÔÀÓ·ÎºñÇÃ·¹ÀÌ¾îÀÇ Æ÷Åæºä°¡ µé¾î°¨
+    //ê²Œì„ë¡œë¹„í”Œë ˆì´ì–´ì˜ í¬í†¤ë·°ê°€ ë“¤ì–´ê°
 
     public void AddPlayer(PhotonView pv)
     {
         playerPhoton.Add(pv);
-        //°ÔÀÓ·ÎºñÇÃ·¹ÀÌ¾îÇÑÅ× ³Ê°¡ ¸î¹øÂ°ÀÎÁö ¾Ë·Á
+        //ê²Œì„ë¡œë¹„í”Œë ˆì´ì–´í•œí…Œ ë„ˆê°€ ëª‡ë²ˆì§¸ì¸ì§€ ì•Œë ¤
     }
 }

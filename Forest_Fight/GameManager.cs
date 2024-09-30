@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public int roomMember = 4;
     public static GameManager instance;
-    public int startLife = 3; //¸ğµç °ÔÀÓ¸Ş´ÏÀú¿¡ º¸³»¾ßµÊ
+    public int startLife = 3; //ëª¨ë“  ê²Œì„ë©”ë‹ˆì €ì— ë³´ë‚´ì•¼ë¨
     public GameObject[] players;
     [SerializeField]
     public Dictionary<int, PlayerCharcter> playerCharcters = new Dictionary<int, PlayerCharcter>();
     public GameObject[] characterPrefabs;
-    public bool MainsceneStartTrigger = true; // ¾Èº¸³»µµµÊ
+    public bool MainsceneStartTrigger = true; // ì•ˆë³´ë‚´ë„ë¨
     public bool lobbySceneStartTrigger = true;
     public bool endingSceneStartTrigger = true;
     bool allPlayersIn = false;

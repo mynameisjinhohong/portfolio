@@ -13,7 +13,7 @@ public class GameLobbyPlayer_HJH : MonoBehaviourPun
     void Start()
 
     {
-        // °ÔÀÓ ·Îºñ ¸Å´ÏÀú¿¡°¡ ÇÃ·¹ÀÌ¾î ±¸ºĞÀ» ÇÒ ¼ö ÀÖ°Ô
+        // ê²Œì„ ë¡œë¹„ ë§¤ë‹ˆì €ì—ê°€ í”Œë ˆì´ì–´ êµ¬ë¶„ì„ í•  ìˆ˜ ìˆê²Œ
         Invoke("LateStart", 0.5f);
 
     }
@@ -23,7 +23,7 @@ public class GameLobbyPlayer_HJH : MonoBehaviourPun
         nickText.text = photonView.Owner.NickName;
         mouse = GameObject.Find("PlayerChoice(Clone)").GetComponent<MouseOnCharacterSelect_HJH>();
         mouse.ui.Add(this.gameObject);
-        // Á¢¼ÓÇÒ¶§¸¶´Ù °ÔÀÓ¸Å´ÏÀú¿¡¼­ »ı¼º -> ÇÃ·¹ÀÌ¾î ±¸ºĞÀ» À§ÇØ 
+        // ì ‘ì†í• ë•Œë§ˆë‹¤ ê²Œì„ë§¤ë‹ˆì €ì—ì„œ ìƒì„± -> í”Œë ˆì´ì–´ êµ¬ë¶„ì„ ìœ„í•´ 
         if (photonView.IsMine)
         {
             mouse.whoConnectThis = photonView.ViewID;

@@ -18,7 +18,7 @@ public class PlayerMove_HJH : MonoBehaviourPun
     public int jumpCount = 2;
     protected int firstJumpCount;
     public bool keyboardMode = false;
-    //Á¡ÇÁÇß´ÂÁö Ã¼Å©ÇÏ°Ô ÇÏ±â À§ÇØ
+    //ì í”„í–ˆëŠ”ì§€ ì²´í¬í•˜ê²Œ í•˜ê¸° ìœ„í•´
     protected bool jumpCheckStart = false;
     protected Animator am;
     public GameObject dashEffect;
@@ -28,14 +28,14 @@ public class PlayerMove_HJH : MonoBehaviourPun
     public AudioClip[] audioClips;
     protected AudioSource audio;
 
-    #region [Çö¼÷] º¯¼ö
-    //****·¹ÀÌ¾î Ãæµ¹ º¯¼ö
+    #region ë³€ìˆ˜
+    //****ë ˆì´ì–´ ì¶©ëŒ ë³€ìˆ˜
     int playerLayer1, playerLayer2, playerLayer3, playerLayer4, groundLayer;
     bool fallGround;
     #endregion
 
-    #region [Çö¼÷] Ãæµ¹¹«½ÃÇÔ¼ö
-    //****Ãæµ¹¹«½Ã(¿­¸²)
+    #region ì¶©ëŒë¬´ì‹œí•¨ìˆ˜
+    //****ì¶©ëŒë¬´ì‹œ(ì—´ë¦¼)
     protected void IgnoreLayerTrue()
     {
         if(this.gameObject.layer == LayerMask.NameToLayer("Player1"))
@@ -57,8 +57,8 @@ public class PlayerMove_HJH : MonoBehaviourPun
     }
     #endregion
 
-    #region [Çö¼÷] Ãæµ¹Àû¿ëÇÔ¼ö
-    //****Ãæµ¹Àû¿ë(´ÝÈû)
+    #region [í˜„ìˆ™] ì¶©ëŒì ìš©í•¨ìˆ˜
+    //****ì¶©ëŒì ìš©(ë‹«íž˜)
     protected void IgnoreLayerFalse()
     {
         if (this.gameObject.layer == LayerMask.NameToLayer("Player1"))
@@ -80,8 +80,8 @@ public class PlayerMove_HJH : MonoBehaviourPun
     }
     #endregion
 
-    #region [Çö¼÷] ÂøÁö¸é ¶³¾îÁú ¶§ Ãæµ¹Ã³¸®
-    //****ÂøÁö¸é¿¡ ¶³¾îÁö´Â Å°¸¦ ´­·¶À»¶§ 0.2ÃÊ°£ ·¹ÀÌ¾î Ãæµ¹ÀÌ ¹«½ÃµÈ ÈÄ ´Ù½Ã Àû¿ë
+    #region ì°©ì§€ë©´ ë–¨ì–´ì§ˆ ë•Œ ì¶©ëŒì²˜ë¦¬
+    //****ì°©ì§€ë©´ì— ë–¨ì–´ì§€ëŠ” í‚¤ë¥¼ ëˆŒë €ì„ë•Œ 0.2ì´ˆê°„ ë ˆì´ì–´ ì¶©ëŒì´ ë¬´ì‹œëœ í›„ ë‹¤ì‹œ ì ìš©
     IEnumerator LayerOpenClose()
     {
         fallGround = true;
@@ -92,8 +92,8 @@ public class PlayerMove_HJH : MonoBehaviourPun
     }
     #endregion
 
-    #region [Çö¼÷] Rayº¯¼ö
-    //**** Rayº¯¼ö
+    #region Rayë³€ìˆ˜
+    //**** Rayë³€ìˆ˜
     private RaycastHit hit;
     private int layerMask;
     private int layerMask2;
@@ -155,8 +155,8 @@ public class PlayerMove_HJH : MonoBehaviourPun
         firstJumpCount = jumpCount;
         GameManager.instance.players[(photonView.ViewID / 1000) - 1] = gameObject;
 
-#region [Çö¼÷] LayerMaskÁöÁ¤
-        //****LayerMask ÁöÁ¤
+#region [í˜„ìˆ™] LayerMaskì§€ì •
+        //****LayerMask ì§€ì •
         playerLayer1 = LayerMask.NameToLayer("Player1");
         playerLayer2 = LayerMask.NameToLayer("Player2");
         playerLayer3 = LayerMask.NameToLayer("Player3");
@@ -352,15 +352,15 @@ public class PlayerMove_HJH : MonoBehaviourPun
             AButton();
         }
 
-#region [Çö¼÷] Á¡ÇÁ¹ßÆÇ / º®Á¡ÇÁ 
-            // Á¡ÇÁ ¹ßÆÇ
-            // ¾Æ·¡·Î ·¹ÀÌ¸¦ ½úÀ» ¶§ 
+#region [í˜„ìˆ™] ì í”„ë°œíŒ / ë²½ì í”„ 
+            // ì í”„ ë°œíŒ
+            // ì•„ëž˜ë¡œ ë ˆì´ë¥¼ ìˆì„ ë•Œ 
             if (Physics.Raycast(this.transform.position, -this.transform.up, out hit, 10, layerMask) && !fallGround)
             {
                 IgnoreLayerFalse();
             }
 
-            //º® Á¡ÇÁ
+            //ë²½ ì í”„
             if (Physics.Raycast(this.transform.position + new Vector3(0, 1.5f, 0), this.transform.forward, out hit, 0.7f, layerMask2) && moveVec.x != 0)
             {
                 Debug.DrawRay(this.transform.position + new Vector3(0, 1.5f, 0), this.transform.forward, Color.green, 0.7f);
@@ -397,15 +397,15 @@ public class PlayerMove_HJH : MonoBehaviourPun
         {
             moveVec.y += gravity * Time.deltaTime;
         }
-        #region [Çö¼÷] Á¡ÇÁ¹ßÆÇ / º®Á¡ÇÁ 
-        // Á¡ÇÁ ¹ßÆÇ
-        // ¾Æ·¡·Î ·¹ÀÌ¸¦ ½úÀ» ¶§ 
+        #region [í˜„ìˆ™] ì í”„ë°œíŒ / ë²½ì í”„ 
+        // ì í”„ ë°œíŒ
+        // ì•„ëž˜ë¡œ ë ˆì´ë¥¼ ìˆì„ ë•Œ 
         if (Physics.Raycast(this.transform.position, -this.transform.up, out hit, 10, layerMask) && !fallGround)
         {
             IgnoreLayerFalse();
         }
 
-        //º® Á¡ÇÁ
+        //ë²½ ì í”„
         if (Physics.Raycast(this.transform.position + new Vector3(0, 1.5f, 0), this.transform.forward, out hit, 0.7f, layerMask2) && moveVec.x != 0)
         {
             Debug.DrawRay(this.transform.position + new Vector3(0, 1.5f, 0), this.transform.forward, Color.green, 0.7f);
@@ -443,9 +443,9 @@ public class PlayerMove_HJH : MonoBehaviourPun
     public virtual void Jump()
     {
 
-        //´õºí Á¡ÇÁ ¹ö±×ÀÖÀ½ ¿Ö±×·±Áö´Â ¸ð¸£°ÚÀ½
+        //ë”ë¸” ì í”„ ë²„ê·¸ìžˆìŒ ì™œê·¸ëŸ°ì§€ëŠ” ëª¨ë¥´ê² ìŒ
 
-        // [Çö¼÷] Á¡ÇÁÁßÀÌ¶ó¸é True
+        // [í˜„ìˆ™] ì í”„ì¤‘ì´ë¼ë©´ True
         IgnoreLayerTrue();
 
         if (jumpCount > 0)
