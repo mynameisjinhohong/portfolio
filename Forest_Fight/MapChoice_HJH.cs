@@ -11,7 +11,7 @@ public class MapChoice_HJH : MonoBehaviourPun
     void Start()
     {
         nomal = buttons[1].colors;
-        // ¹æÀåÀÌ ¾Æ´Ï¶ó¸é ¸Ê ¼±ÅÃ ±İÁö!
+        // ë°©ì¥ì´ ì•„ë‹ˆë¼ë©´ ë§µ ì„ íƒ ê¸ˆì§€!
 
     }
 
@@ -32,7 +32,7 @@ public class MapChoice_HJH : MonoBehaviourPun
         }
     }
 
-    // ¹æÀå¸¸ º¸³¾ ¼ö ÀÖ°Ô!
+    // ë°©ì¥ë§Œ ë³´ë‚¼ ìˆ˜ ìˆê²Œ!
     public void map1()
     {
         if (PhotonNetwork.IsMasterClient)
