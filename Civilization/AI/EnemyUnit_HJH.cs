@@ -33,10 +33,10 @@ public class EnemyUnit_HJH : MonoBehaviour
     }
     void SetMyCell()
     {
-        HexCell[] cell = HexGrid.instance.cells; //�ʵ忡 �ִ� ��� ���� ������ �����´�.
+        HexCell[] cell = HexGrid.instance.cells; //필드에 있는 모든 셀의 정보를 가져온다.
         for (int i = 0; i < cell.Length; i++)
         {
-            if (1 > Mathf.Abs(cell[i].transform.position.x - this.transform.position.x)) //Abs ����
+            if (1 > Mathf.Abs(cell[i].transform.position.x - this.transform.position.x)) //Abs 절댓값
             {
                 if (1 > Mathf.Abs(cell[i].transform.position.z - this.transform.position.z))
                 {
