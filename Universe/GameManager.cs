@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public Userinfo userinfo;
     public MapData mapData;
     public GameObject myCharacter;
-    public string url = "43.201.8.119:8080";
+    public string url = env.ip;
     public bool faceChatOn = false;
     public bool micOn = false;
     public bool cherryDone = false;
