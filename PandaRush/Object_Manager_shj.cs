@@ -26,7 +26,7 @@ public class Object_Manager_shj : MonoBehaviour
 
     public void Active(GameObject player)
     {
-        if(type == Type.Item) //¾ÆÀÌÅÛ ÀÏ¶§
+        if(type == Type.Item) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¶ï¿½
         {
             Item_Active(player);
             if (ItmeInActive)
@@ -39,7 +39,7 @@ public class Object_Manager_shj : MonoBehaviour
         {
             Obstacle_Active(player);
             if(animator != null) animator.SetTrigger("Touch");
-            if (player.GetComponent<Player_shj>().state != Player_State.Rolling) player.GetComponent<Player_shj>().hp--;
+            if (player.GetComponent<Player_HJH>().state != Player_State.Rolling) player.GetComponent<Player_HJH>().hp--;
         }
     }
 
@@ -47,7 +47,7 @@ public class Object_Manager_shj : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.gameObject.tag == "Player" && collision.GetComponent<Player_shj>().enabled ) && !touch)
+        if ((collision.gameObject.tag == "Player" && collision.GetComponent<Player_HJH>().enabled ) && !touch)
         {
             Active(collision.gameObject);
             touch = true;
