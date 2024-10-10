@@ -11,7 +11,7 @@ XR-2,Ai-1,네트워크-1,컨텐츠 창작자-2 로 이루어진 팀구성
 - 회원가입,로그인 등 기능 구현
 - 케릭터와 오브젝트 상호작용,이동,이모지 등 기본적인 캐릭터 기능 구현
 ## 핵심 스크립트
-1. MakeMapManager_H,MapEditorTmp,FileManager_L
+1. MakeMapManager_H,MapEditorTmp,FileManager_L,RoomManager_H
 - 맵 생성 스크립트
 - 사용자가 맵을 생성을 원하면 어떠한 프리셋으로 제작할지 결정하고, 리소스 폴더에서 해당 프리셋 맵의 데이터를 가져와서(그 사이에 ai 검사 등을 거치고) 서버에 업로드
 - 서버에 업로드 된 후, 맵 에디터 씬으로 넘어가서 MapEditorTmp 작동
