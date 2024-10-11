@@ -25,7 +25,7 @@ XR-2,Ai-1,네트워크-1,컨텐츠 창작자-2 로 이루어진 팀구성
 - 원래 테스트 용으로 만들었던 NewBehaviorScript를 막상 넣어서 해보니 잘 작동해서 그냥 계속 쓰게 되었다.
 - Railway를 활용하여 호스팅한 토큰 서버와 통신을 해서 토큰을 발급받고, Agora SDK 의 API를 활용하여 화상채팅 영역에 들어왔을 경우 화상채팅 서버 연결
 - 화상 채팅 뿐만 아니라 화면 공유 가능. 특정 대상의 화면 타게팅 가능(줌과 같이)
-3. FileManager_H,ChangeInput_H,ChangeAvatar_H 등등
+3. FileManager_H,ChangeInput_H,MyInfoManager_H 등등
 - 로그인,회원가입 UI 제작
 - 회원가입 시 저장된 데이터들을 서버에 보내서 응답을 받고 처리
 - 회원가입이 완료되면, 로그인 시 해당 데이터들을 서버에서 받아와서 마이페이지 UI 구성
